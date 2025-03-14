@@ -7,11 +7,12 @@ const App = () => {
   return (
     <div>
       <BrowserRouter>
+
          <Routes>
           <Route path='/' element={<LoginSignUp/>} />
           <Route path='/dashboard' element={<DashBoard/>} />
          </Routes>
-
+         
       </BrowserRouter>
 
    </div>

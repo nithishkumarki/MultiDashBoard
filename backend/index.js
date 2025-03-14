@@ -1,4 +1,5 @@
-const port=4000;
+require('dotenv').config();
+const port=process.env.PORT;
 const express=require('express');
 const app=express();//crating app instance
 const mongoose=require('mongoose');
@@ -18,7 +19,7 @@ const User=mongoose.model('Users',
         password:String
     });
 
-mongoose.connect("mongodb+srv://nithishkumarillayaraja14:nsgMrIgRlxhTVzcW@cluster0.pwdhl.mongodb.net/db1");
+mongoose.connect(process.env.url);
 
 app.get("/",(req,res)=>{
    
@@ -71,14 +72,8 @@ app.post("/signup",async(req,res)=>
             
         })
 
-app.listen(port,(error)=>{
-    if(!error)
-    {
-     console.log("Server Running on Port"+port);
-    }
-    else{
-     console.log("Error : "+error);
-    }
-})
+        app.listen(port, () => {
+            console.log('Server Running on Port 4000');
+        });
 
 

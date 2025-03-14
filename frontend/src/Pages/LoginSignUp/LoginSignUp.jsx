@@ -24,7 +24,7 @@ const LoginSignUp = () => {
   {
      let responseData;
      await fetch(
-        "http://localhost:4000/signup",
+        "https://multidashboardbackend.onrender.com/signup",
         {
             method:'POST',
             headers:{
@@ -51,7 +51,7 @@ const LoginSignUp = () => {
    const loginFun=async()=>
     {
         let responseData;
-               await fetch("http://localhost:4000/login",
+               await fetch("https://multidashboardbackend.onrender.com/login",
                 {
                     method:'POST',
                     headers:{
